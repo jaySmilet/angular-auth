@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {
-  CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   CanDeactivate,
@@ -13,13 +12,14 @@ export interface IDeactivate {
 }
 
 @Injectable()
-export class DeactivateGuard implements CanDeactivate<CanExitComponent> {
+export class DeactivateGuard implements CanDeactivate<IDeactivate> {
   canDeactivate(
-    component: CanExitComponent,
+    component: IDeactivate,
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,
     nextState: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
+    console.log(component.canExit());
     return component.canExit ? component.canExit() : true;
   }
 }
