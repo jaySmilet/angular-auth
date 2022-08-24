@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-naigation',
-  templateUrl: './naigation.component.html',
-  styleUrls: ['./naigation.component.css'],
+  selector: 'app-navigation',
+  templateUrl: './navigation.component.html',
+  styleUrls: ['./navigation.component.css'],
 })
-export class NaigationComponent implements OnInit {
+export class NavigationComponent implements OnInit {
   showLogin: boolean = false;
   constructor(public authService: AuthService) {}
 
@@ -18,7 +18,7 @@ export class NaigationComponent implements OnInit {
 
   myRoutes = [
     {
-      path: '/',
+      path: '/home',
       name: 'Home',
     },
     {

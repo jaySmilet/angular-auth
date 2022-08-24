@@ -1,0 +1,13 @@
+<nav>
+  <ul>
+    <li *ngFor="let mRoute of myRoutes" [routerLink]="mRoute.path">
+      <a routerLinkActive="active">{{ mRoute.name }}</a>
+    </li>
+    <li *ngIf="!showLogin" routerLink="login">
+      <a routerLinkActive="active">Login</a>
+    </li>
+    <li *ngIf="showLogin">
+      <a (click)="logOut()">Logout</a>
+    </li>
+  </ul>
+</nav>

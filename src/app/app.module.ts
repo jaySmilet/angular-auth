@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NaigationComponent } from './naigation/naigation.component';
+import { NavigationComponent } from './navigation/navigation.component';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,7 +29,7 @@ import { ProductEditComponent } from './product/product-edit/product-edit.compon
   ],
   declarations: [
     AppComponent,
-    NaigationComponent,
+    NavigationComponent,
     LoginComponent,
     ProductComponent,
     HomeComponent,

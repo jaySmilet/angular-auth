@@ -1,6 +1,7 @@
 nav ul {
   display: flex;
   justify-content: space-evenly;
+  list-style: none;
 }
 nav ul li a {
   cursor: pointer;
