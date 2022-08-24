@@ -17,6 +17,7 @@ import { AuthGuardService } from './auth-guard.service';
 import { DeactivateGuard } from './deactivate.guard';
 import { ProductViewComponent } from './product/product-view/product-view.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductResolveService } from './product-resolve.service';
 
 @NgModule({
   imports: [
@@ -37,7 +38,7 @@ import { ProductEditComponent } from './product/product-edit/product-edit.compon
     ProductViewComponent,
     ProductEditComponent,
   ],
-  providers: [ProductService, AuthService, AuthGuardService, DeactivateGuard],
+  providers: [ProductService, AuthService, AuthGuardService, DeactivateGuard,ProductResolveService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

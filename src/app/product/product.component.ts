@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../model/product';
 import { ProductService } from '../services/product.service';
@@ -10,9 +11,15 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductComponent implements OnInit {
   products: Product[] = [];
-  constructor(private productService: ProductService) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private productService: ProductService
+  ) {}
 
   ngOnInit() {
+    // Fetch Products from Resolver
+    this.products = this.activatedRoute.snapshot.data['products'];
+    // Fetch Product as usual
     this.fetchAllProduct();
   }
 

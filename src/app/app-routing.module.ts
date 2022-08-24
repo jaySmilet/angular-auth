@@ -6,6 +6,7 @@ import { DeactivateGuard } from './deactivate.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductResolveService } from './product-resolve.service';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductViewComponent } from './product/product-view/product-view.component';
 import { ProductComponent } from './product/product.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
     component: ProductComponent,
     canActivate: [AuthGuardService],
     canActivateChild: [AuthGuardService],
+    resolve: {products:ProductResolveService},
     children: [
       {
         path: 'view/:id',
@@ -29,7 +31,7 @@ const routes: Routes = [
       {
         path: 'edit/:id',
         component: ProductEditComponent,
-        canDeactivate:[DeactivateGuard]
+        canDeactivate: [DeactivateGuard],
       },
     ],
   },
@@ -44,7 +46,7 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
-    canDeactivate:[DeactivateGuard]
+    canDeactivate: [DeactivateGuard],
   },
   {
     path: '**',
