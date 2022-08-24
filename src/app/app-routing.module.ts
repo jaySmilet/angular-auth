@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AuthGuardService } from './auth-guard.service';
+import { DeactivateGuard } from './deactivate.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+    canDeactivate:[DeactivateGuard]
   },
   {
     path: '**',
