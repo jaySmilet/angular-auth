@@ -20,7 +20,10 @@ export class AuthService {
   login(username: string, password: string) {
     this.isLoggedIn = true;
     this.username = username;
-    this.isLoggedInBS.next({isLoggedIn:this.isLoggedIn,username:this.username});
+    this.isLoggedInBS.next({
+      isLoggedIn: this.isLoggedIn,
+      username: this.username,
+    });
     return this.isLoggedInBS.asObservable();
   }
 
@@ -37,7 +40,10 @@ export class AuthService {
 
   logoutUser(): void {
     this.isLoggedIn = false;
-    this.isLoggedInBS.next({isLoggedIn:this.isLoggedIn,username:this.username});
+    this.isLoggedInBS.next({
+      isLoggedIn: this.isLoggedIn,
+      username: this.username,
+    });
     this.router.navigate(['login']);
   }
 }

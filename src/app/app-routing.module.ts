@@ -29,6 +29,7 @@ const routes: Routes = [
       {
         path: 'edit/:id',
         component: ProductEditComponent,
+        canDeactivate:[DeactivateGuard]
       },
     ],
   },
