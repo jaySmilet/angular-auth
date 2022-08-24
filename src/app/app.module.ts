@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './auth-guard.service';
+import { DeactivateGuard } from './deactivate.guard';
+import { CanExitComponent } from './components/can-exit/can-exit.component';
 
 @NgModule({
   imports: [
@@ -31,8 +33,9 @@ import { AuthGuardService } from './auth-guard.service';
     ProductComponent,
     HomeComponent,
     AboutComponent,
+    CanExitComponent,
   ],
-  providers: [ProductService, AuthService, AuthGuardService],
+  providers: [ProductService, AuthService, AuthGuardService, DeactivateGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
