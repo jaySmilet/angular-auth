@@ -17,28 +17,29 @@ export class NavigationComponent implements OnInit {
     });
   }
 
-  senseActive(url): boolean {
+  senseActive = (url): boolean => {
+    console.log('Check', url, this.router.isActive(url, false));
     return this.router.isActive(url, false);
-  }
+  };
 
   myRoutes = [
     {
       path: '/home',
       name: 'Home',
       icon: 'fa-solid fa-house',
-      iconActive: 'fa-solid fa-house-blank',
+      iconActive: 'fa-solid fa-house-user',
     },
     {
       path: '/about',
       name: 'About',
-      icon: 'fa-solid fa-user',
-      iconActive: 'fa-solid fa-user-gear',
+      icon: 'fa-solid fa-info',
+      iconActive: 'fa-solid fa-circle-info',
     },
     {
       path: '/product',
       name: 'Products',
-      icon: 'fa-solid fa-code-simple',
-      iconActive: 'fa-solid fa-code',
+      icon: 'fa-solid fa-bug',
+      iconActive: 'fa-solid fa-bug-slash',
     },
   ];
 

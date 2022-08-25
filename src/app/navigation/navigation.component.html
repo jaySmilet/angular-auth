@@ -1,16 +1,24 @@
 <nav>
   <ul>
     <li *ngFor="let mRoute of myRoutes" [routerLink]="mRoute.path">
-      <i [class]="mRoute.icon" *ngIf="!senseActive(mRoute.path)"></i>
-      <i [class]="mRoute.iconActive" *ngIf="senseActive(mRoute.path)"></i>
-      <a routerLinkActive="active">{{ mRoute.name }}</a>
+      <a routerLinkActive="active">
+        <i [class]="mRoute.icon" *ngIf="!senseActive(mRoute.path)"></i>
+        <i [class]="mRoute.iconActive" *ngIf="senseActive(mRoute.path)"></i>
+        {{ mRoute.name }}</a
+      >
     </li>
 
     <li *ngIf="!showLogin" routerLink="login">
-      <a routerLinkActive="active">Login</a>
+      <a routerLinkActive="active">
+        <i class="fa-solid fa-lock"></i>
+        Login
+      </a>
     </li>
     <li *ngIf="showLogin">
-      <a (click)="logOut()">Logout</a>
+      <a (click)="logOut()">
+        <i class="fa-solid fa-lock-open"></i>
+        Logout
+      </a>
     </li>
   </ul>
 </nav>
