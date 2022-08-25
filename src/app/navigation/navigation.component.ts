@@ -18,7 +18,7 @@ export class NavigationComponent implements OnInit {
   }
 
   senseActive = (url): boolean => {
-    console.log('Check', url, this.router.isActive(url, false));
+    // console.log('Check', url, this.router.isActive(url, false));
     return this.router.isActive(url, false);
   };
 

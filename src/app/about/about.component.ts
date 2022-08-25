@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  NavigationStart,
+  Router,
+} from '@angular/router';
+import { filter, Observable } from 'rxjs';
 import { IDeactivate } from '../deactivate.guard';
 
 @Component({
@@ -13,6 +18,14 @@ export class AboutComponent implements OnInit, IDeactivate {
   ngOnInit() {
     // Fetching static data passed through routes
     this.activatedRoute.data.subscribe((data) => console.log(data));
+
+    // Listen to Router Events
+    // this.router.events
+    //   .pipe(filter((event) => event instanceof NavigationStart))
+    //   .subscribe((event) => console.log(event));
+    // this.router.events
+    //   .pipe(filter((event) => event instanceof NavigationEnd))
+    //   .subscribe((event) => console.log(event));
   }
 
   canExit(): Observable<boolean> | Promise<boolean> | boolean {
