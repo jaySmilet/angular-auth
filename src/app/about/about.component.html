@@ -1,3 +1,14 @@
 <div class="about">
-   I am the divine flame.
+  <p>I am the divine flame.</p>
+  <p>
+    <a
+      routerLink="/home"
+      [state]="{
+        db: 'This is dynamic data passing through routes',
+        mode: 'routerLink'
+      }"
+      >Go Home</a
+    >
+  </p>
+  <button (click)="toGO()">AtoB</button>
 </div>

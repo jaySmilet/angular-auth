@@ -22,7 +22,7 @@ const routes: Routes = [
     component: ProductComponent,
     canActivate: [AuthGuardService],
     canActivateChild: [AuthGuardService],
-    resolve: {products:ProductResolveService},
+    resolve: { products: ProductResolveService },
     children: [
       {
         path: 'view/:id',
@@ -47,6 +47,7 @@ const routes: Routes = [
     path: 'about',
     component: AboutComponent,
     canDeactivate: [DeactivateGuard],
+    data: { db: 'This is static data passed through routes' },
   },
   {
     path: '**',
