@@ -34,7 +34,7 @@
   <ul>
     <li>without exact true</li>
     <li>
-      <a routerLink="/product/view/" routerLinkActive="active">View</a>
+      <a routerLink="/product/view/" (isActiveChange)="ok($event)"routerLinkActive="active">View</a>
     </li>
     <li>
       <a routerLink="/product/edit/" routerLinkActive="active">Edit</a>

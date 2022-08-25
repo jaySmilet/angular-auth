@@ -13,7 +13,7 @@ export class ProductComponent implements OnInit {
   products: Product[] = [];
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productService: ProductService,
+    private productService: ProductService
   ) {}
 
   ngOnInit() {
@@ -29,5 +29,9 @@ export class ProductComponent implements OnInit {
     this.productService.getProducts().subscribe((res) => {
       this.products = res;
     });
+  }
+
+  ok(event) {
+    console.log(event);
   }
 }

@@ -1,8 +1,11 @@
 <nav>
   <ul>
     <li *ngFor="let mRoute of myRoutes" [routerLink]="mRoute.path">
+      <i [class]="mRoute.icon" *ngIf="!senseActive(mRoute.path)"></i>
+      <i [class]="mRoute.iconActive" *ngIf="senseActive(mRoute.path)"></i>
       <a routerLinkActive="active">{{ mRoute.name }}</a>
     </li>
+
     <li *ngIf="!showLogin" routerLink="login">
       <a routerLinkActive="active">Login</a>
     </li>
