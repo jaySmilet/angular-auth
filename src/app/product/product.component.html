@@ -30,4 +30,37 @@
   </tbody>
 </table>
 
+<nav id="without-exact-true">
+  <ul>
+    <li>without exact true</li>
+    <li>
+      <a routerLink="/product/view/" routerLinkActive="active">View</a>
+    </li>
+    <li>
+      <a routerLink="/product/edit/" routerLinkActive="active">Edit</a>
+    </li>
+  </ul>
+</nav>
+<nav id="with-exact-true">
+  <ul>
+    <li>with exact true</li>
+    <li>
+      <a
+        routerLink="/product/view/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >View</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/product/edit/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Edit</a
+      >
+    </li>
+  </ul>
+</nav>
+
 <router-outlet></router-outlet>
